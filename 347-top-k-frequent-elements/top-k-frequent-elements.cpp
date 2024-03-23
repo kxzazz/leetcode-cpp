@@ -12,7 +12,7 @@ public:
             pq;
 
         // push pairs into pq
-        for (auto kv : freqMap) {
+        for (const auto kv : freqMap) {
             pq.push(make_pair(kv.second, kv.first));
             // limit size to k
             if (pq.size() > k) {
