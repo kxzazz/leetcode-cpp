@@ -3,7 +3,7 @@ public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
         // get a freqMap
         unordered_map<int, int> freqMap;
-        for (const int i : nums) {
+        for (int i : nums) {
             freqMap[i]++;
         }
         // create a min map, greater<pii>
