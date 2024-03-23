@@ -19,13 +19,7 @@ public:
     }
 
     string getHash(string str){
-        int freq[26]={0};
-        for(char c: str) freq[c - 'a']++;
-        
-        string s="";
-        for(int i=0; i < 26; i++){
-            s += freq[i] + '0';
-        }
-        return s;
+        sort(str.begin(), str.end());
+        return str;
     }
 };
