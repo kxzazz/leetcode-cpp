@@ -3,10 +3,8 @@ public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         unordered_map<string, vector<string>> hashRecord;
         for(string str: strs){
-            string hash = getHash(str);
-            if(!hashRecord.contains(hash)){
-                hashRecord[hash] = {};
-            }
+            string hash = str;
+            sort(hash.begin(), hash.end());
             hashRecord[hash].push_back(str);
         }
 
@@ -16,10 +14,5 @@ public:
         }
         return ans;
         
-    }
-
-    string getHash(string str){
-        sort(str.begin(), str.end());
-        return str;
     }
 };
