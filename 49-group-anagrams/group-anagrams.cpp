@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        map<string, vector<string>> hashRecord;
+        unordered_map<string, vector<string>> hashRecord;
         for(string str: strs){
             string hash = getHash(str);
             if(!hashRecord.contains(hash)){
