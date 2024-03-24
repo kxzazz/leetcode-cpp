@@ -1,7 +1,10 @@
 class Solution {
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
-       int left = 1, right = 1000000000;
+       int left = 1, right = 0;
+       for(auto p: piles){
+            right = max(right, p);
+       }
         while(left <= right){
             long long k = left + (right - left)/2;
             if(canEat(piles, h, k)) right = k - 1;
